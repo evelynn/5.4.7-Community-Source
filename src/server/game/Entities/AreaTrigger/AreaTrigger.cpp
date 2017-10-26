@@ -360,8 +360,10 @@ void AreaTrigger::Remove(bool byExpire)
 
                     for (Map::PlayerList::const_iterator l_Itr = l_PlayerList.begin(); l_Itr != l_PlayerList.end(); ++l_Itr)
                     {
-						if (Player* l_Player = l_Itr->getSource())
-							;// l_Player->GetForcedMovement().Stop();
+						if (Player* l_Player = l_Itr->getSource()) 
+						{
+							// l_Player->GetForcedMovement().Stop();
+						}
                     }
                 }
                 /// Else, getting players around the areatrigger

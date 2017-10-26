@@ -2573,6 +2573,7 @@ public:
                 p_Amount = 0;
                 return NULL;
             }
+			return TRUE;
         }
 
         void Register()

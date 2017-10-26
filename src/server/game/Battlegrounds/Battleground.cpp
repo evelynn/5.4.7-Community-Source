@@ -1059,11 +1059,12 @@ void Battleground::EndBattleground(uint32 p_Winner)
             {
                 // update achievement BEFORE personal rating update
                 uint32 rating = l_Player->GetArenaPersonalRating(slot);
-				if (!GetArenaType() == ARENA_TEAM_5v5)
-                l_Player->UpdateAchievementCriteria(ACHIEVEMENT_CRITERIA_TYPE_WIN_RATED_ARENA, rating ? rating : 1);
-                l_Player->UpdateAchievementCriteria(ACHIEVEMENT_CRITERIA_TYPE_WIN_ARENA, GetMapId());
-                if (GetArenaType() != ARENA_TYPE_5v5)
-                    l_Player->ModifyCurrency(CURRENCY_TYPE_CONQUEST_META_ARENA, sWorld->getIntConfig(CONFIG_CURRENCY_CONQUEST_POINTS_ARENA_REWARD));
+				if (GetArenaType() != ARENA_TEAM_5v5)
+				{
+					l_Player->UpdateAchievementCriteria(ACHIEVEMENT_CRITERIA_TYPE_WIN_RATED_ARENA, rating ? rating : 1);
+					l_Player->UpdateAchievementCriteria(ACHIEVEMENT_CRITERIA_TYPE_WIN_ARENA, GetMapId());
+					l_Player->ModifyCurrency(CURRENCY_TYPE_CONQUEST_META_ARENA, sWorld->getIntConfig(CONFIG_CURRENCY_CONQUEST_POINTS_ARENA_REWARD));
+				}   
             }
             else
             {
