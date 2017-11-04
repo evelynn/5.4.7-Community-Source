@@ -58,7 +58,7 @@ public:
                     std::string playerName = playerFeild[2].GetString();
 
                     char msg[250];
-                    snprintf(msg, 250, "[Name: %s, Rating: %u]", playerName, playerrating);
+                    snprintf(msg, 250, "[Name: %s, Rating: %u]", playerName.c_str(), playerrating);
                     player->ADD_GOSSIP_ITEM(7, msg, GOSSIP_SENDER_MAIN, GOSSIP_ACTION_INFO_DEF + playerguid);
                     player->SEND_GOSSIP_MENU(creature->GetEntry(), creature->GetGUID());
 					

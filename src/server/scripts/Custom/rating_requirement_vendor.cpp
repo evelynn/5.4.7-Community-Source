@@ -88,8 +88,9 @@ public:
 					WorldDatabase.PExecute("INSERT INTO `gear_vendor_used` (`guid`) VALUES (%u)", player->GetSession()->GetAccountId());
 					WorldDatabase.PExecute("INSERT INTO `gear_vendor_used2` (`charid`) VALUES (%u)", player->GetGUID());
 				}
-				break;
+			break;
         }
+		return true;
     }
 
 };

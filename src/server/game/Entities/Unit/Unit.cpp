@@ -3049,9 +3049,9 @@ SpellMissInfo Unit::MeleeSpellHitResult(Unit* victim, SpellInfo const* spell)
     if (spell->DmgClass == SPELL_DAMAGE_CLASS_RANGED)
         attType = RANGED_ATTACK;
 
-    uint32 roll = urand (0, 10000);
+    int32 roll = urand (0, 10000);
 
-    uint32 missChance = uint32(MeleeSpellMissChance(victim, attType, spell->Id) * 100.0f);
+    int32 missChance = int32(MeleeSpellMissChance(victim, attType, spell->Id) * 100.0f);
     // Roll miss
     if (roll < missChance)
         return SPELL_MISS_MISS;
